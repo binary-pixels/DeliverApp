@@ -5,6 +5,7 @@ import 'package:flutter_application_3/components/my_button.dart';
 import 'package:flutter_application_3/components/my_textfield.dart';
 
 import 'home_page.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -25,7 +26,6 @@ class _LoginPageState extends State<LoginPage> {
     /*
     fill out authentication here.
     */
-
     // navigate to home page
     Navigator.push(
       context,
@@ -38,15 +38,17 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      // backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           // logo
-          Icon(
-            Icons.lock_open_rounded,
-            size: 72,
-            color: Theme.of(context).colorScheme.inversePrimary,
-          ),
+          // Icon(
+          //   Icons.lock_open_rounded,
+          //   size: 72,
+          //   color: Theme.of(context).colorScheme.inversePrimary,
+          // ),
+          Lottie.asset('lib/assets/Animation1.json'),
           const SizedBox(
             height: 25,
           ),

@@ -71,24 +71,26 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       drawer: const MyDrawer(),
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           MySliverAppBar(
             title: MyTabBar(tabController: _tabController),
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Divider(
                   indent: 25,
                   endIndent: 25,
-                  color: Theme.of(context).colorScheme.secondary,
+                  // color: Theme.of(context).colorScheme.secondary,
+                  color: Colors.white,
                 ),
                 // my current location
-                const MyCurrentLocartion(),
+                MyCurrentLocartion(),
 
                 // description box
-                const MyDescriptionBox(),
+                MyDescriptionBox(),
               ],
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/components/my_button.dart';
 import '../models/food.dart';
 
 class FoodPage extends StatefulWidget {
@@ -13,6 +14,7 @@ class _FoodPageState extends State<FoodPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           // food image
@@ -35,13 +37,13 @@ class _FoodPageState extends State<FoodPage> {
                 ),
                 //food price
                 Text(
-                  '\$' + widget.food.price.toString(),
+                  '\$${widget.food.price}',
                   style: TextStyle(
                     fontSize: 16,
                     color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
-                const SizedBox(height: 10),
+                // const SizedBox(height: 10),
 
                 //food description
                 Text(widget.food.description),
@@ -49,7 +51,7 @@ class _FoodPageState extends State<FoodPage> {
                 const SizedBox(height: 10),
 
                 Divider(color: Theme.of(context).colorScheme.secondary),
-                const SizedBox(height: 10),
+                // const SizedBox(height: 10),
 
                 Text(
                   "Add-ons",
@@ -60,7 +62,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                 ),
 
-                const SizedBox(height: 10),
+                // const SizedBox(height: 10),
 
                 //addons
                 Container(
@@ -79,7 +81,11 @@ class _FoodPageState extends State<FoodPage> {
                       Addon addon = widget.food.availableAddons[index];
                       return CheckboxListTile(
                         title: Text(addon.name),
-                        subtitle: Text('\$' + addon.price.toString()),
+                        subtitle: Text(
+                          '\$${addon.price}',
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.primary),
+                        ),
                         value: false,
                         onChanged: (value) {},
                       );
@@ -89,6 +95,15 @@ class _FoodPageState extends State<FoodPage> {
               ],
             ),
           ),
+
+          // button -> add to cart
+          MyButton(
+            onTop: () {},
+            text: "Add to Cart",
+          ),
+          // const SizedBox(
+          //   height: 5,
+          // ),
         ],
       ),
     );
