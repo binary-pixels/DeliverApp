@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/components/my_button.dart';
-import 'package:flutter_application_3/components/my_textfield.dart';
+import '../components/my_button.dart';
+import '../components/my_textfield.dart';
 
 import 'home_page.dart';
 import 'package:lottie/lottie.dart';

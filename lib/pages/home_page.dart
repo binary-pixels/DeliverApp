@@ -1,14 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/components/my_current_locartion.dart';
-import 'package:flutter_application_3/components/my_description_box.dart';
-import 'package:flutter_application_3/components/my_drawer.dart';
-import 'package:flutter_application_3/components/my_food_tile.dart';
-import 'package:flutter_application_3/components/my_sliver_app_bar.dart';
-import 'package:flutter_application_3/components/my_tab_bar.dart';
-import 'package:flutter_application_3/models/food.dart';
-import 'package:flutter_application_3/models/restaurant.dart';
-import 'package:flutter_application_3/pages/food_page.dart';
+import '../components/my_current_locartion.dart';
+import '../components/my_description_box.dart';
+import '../components/my_drawer.dart';
+import '../components/my_food_tile.dart';
+import '../components/my_sliver_app_bar.dart';
+import '../components/my_tab_bar.dart';
+import '../models/food.dart';
+import '../models/restaurant.dart';
+import '../pages/food_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {

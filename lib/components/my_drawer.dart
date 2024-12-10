@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/components/my_drawer_tile.dart';
+import '../components/my_drawer_tile.dart';
 
 import '../pages/settings_page.dart';
 
