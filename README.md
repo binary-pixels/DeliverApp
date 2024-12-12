@@ -14,3 +14,21 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+# firebase seting
+sudo npm install -g firebase-tools
+firebase login
+flutter pub global activate flutterfire_cli
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+sudo gem install xcodeproj
+
+flutter pub add firebase_core
+flutter pub add firebase_auth
+flutter pub add flutter_keyboard_visibility
+[Firestore Database]
+[safe rule: true]
+
+
+ flutter pub add cloud_firestore

@@ -6,6 +6,7 @@ import '../models/cart_item.dart';
 import 'food.dart';
 
 class Restaurant extends ChangeNotifier {
+  // list of food menu
   final List<Food> _menu = [
     // burgers
     Food(
@@ -343,14 +344,15 @@ class Restaurant extends ChangeNotifier {
     ),
   ];
 
-  /** 
+  // user cart
+  final List<CartItem> _cart = [];
 
-    GETTERS
-
-   */
+  // delivery address which user can change or update
+  String _deliveryAddress = '99 Hollywood Blv';
 
   List<Food> get menu => _menu;
   List<CartItem> get cart => _cart;
+  String get deliveryAdress => _deliveryAddress;
 
   /** 
     
@@ -358,8 +360,6 @@ class Restaurant extends ChangeNotifier {
 
   */
 
-  // user cart
-  final List<CartItem> _cart = [];
   // add to cart
   void addToCart(Food food, List<Addon> selectedAddons) {
     // see if there is a cart item already with the same food and selected addons
@@ -428,6 +428,11 @@ class Restaurant extends ChangeNotifier {
     notifyListeners();
   }
 
+  // update delivery adress
+  void updateDeliveryAdress(String newAddress) {
+    _deliveryAddress = newAddress;
+    notifyListeners();
+  }
   /**
    
    HELPERS
@@ -460,6 +465,8 @@ class Restaurant extends ChangeNotifier {
     receipt.writeln();
     receipt.writeln("Total Items: ${getTotalItemCount()}");
     receipt.writeln("Total Price: ${_formatPrice(getToatlPrice())}");
+    receipt.writeln();
+    receipt.writeln("Delivering to: $deliveryAdress");
 
     return receipt.toString();
   }

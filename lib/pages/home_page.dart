@@ -77,10 +77,10 @@ class _HomePageState extends State<HomePage>
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           MySliverAppBar(
             title: MyTabBar(tabController: _tabController),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Divider(
+                const Divider(
                   indent: 25,
                   endIndent: 25,
                   // color: Theme.of(context).colorScheme.secondary,
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage>
                 MyCurrentLocartion(),
 
                 // description box
-                MyDescriptionBox(),
+                const MyDescriptionBox(),
               ],
             ),
           ),

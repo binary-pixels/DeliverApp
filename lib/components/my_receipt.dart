@@ -25,9 +25,15 @@ class MyRecipt extends StatelessWidget {
               ),
               padding: const EdgeInsets.all(25),
               child: Consumer<Restaurant>(
-                  builder: (context, restaurant, child) =>
-                      Text(restaurant.displayCartReceipt())),
+                builder: (context, restaurant, child) => Text(
+                  restaurant.displayCartReceipt(),
+                ),
+              ),
             ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Text("Estimated delivery time is: 5:20 PM"),
           ],
         ),
       ),

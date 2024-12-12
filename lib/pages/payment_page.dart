@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/components/my_button.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
-
 import 'delivery_progress.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({super.key});
@@ -72,46 +72,56 @@ class _PaymentPageState extends State<PaymentPage> {
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Checkout"),
       ),
-      body: Column(
-        children: [
-          // credit card
-          CreditCardWidget(
-            cardNumber: cardNumber,
-            expiryDate: expiryDate,
-            cardHolderName: cardHolderName,
-            cvvCode: cvvCode,
-            showBackView: isCvvFocused,
-            onCreditCardWidgetChange: (p0) {},
-          ),
+      resizeToAvoidBottomInset: true,
+      body: KeyboardVisibilityBuilder(
+        builder: (context, isKeyboardVisable) {
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      // credit card
+                      CreditCardWidget(
+                        cardNumber: cardNumber,
+                        expiryDate: expiryDate,
+                        cardHolderName: cardHolderName,
+                        cvvCode: cvvCode,
+                        showBackView: isCvvFocused,
+                        onCreditCardWidgetChange: (p0) {},
+                      ),
+                      // credit card form
+                      CreditCardForm(
+                        cardNumber: cardNumber,
+                        expiryDate: expiryDate,
+                        cardHolderName: cardHolderName,
+                        cvvCode: cvvCode,
+                        onCreditCardModelChange: (data) {
+                          setState(() {
+                            cardNumber = data.cardNumber;
+                            expiryDate = data.expiryDate;
+                            cardHolderName = data.cardHolderName;
+                            cvvCode = data.cvvCode;
+                          });
+                        },
+                        formKey: formKey,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
 
-          // credit card form
-          CreditCardForm(
-            cardNumber: cardNumber,
-            expiryDate: expiryDate,
-            cardHolderName: cardHolderName,
-            cvvCode: cvvCode,
-            onCreditCardModelChange: (data) {
-              setState(() {
-                cardNumber = data.cardNumber;
-                expiryDate = data.expiryDate;
-                cardHolderName = data.cardHolderName;
-                cvvCode = data.cvvCode;
-              });
-            },
-            formKey: formKey,
-          ),
-
-          const Spacer(),
-
-          MyButton(
-            text: "Pay now",
-            onTop: () => userTappedPay(),
-          ),
-
-          const SizedBox(
-            height: 25,
-          ),
-        ],
+              // const Spacer(),
+              if (!isKeyboardVisable)
+                MyButton(
+                  text: "Pay now",
+                  onTop: () => userTappedPay(),
+                ),
+              const SizedBox(height: 25),
+            ],
+          );
+        },
       ),
     );
   }

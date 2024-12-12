@@ -52,22 +52,21 @@ class MyCartTile extends StatelessWidget {
                             color:
                                 Theme.of(context).colorScheme.inversePrimary),
                       ),
+                      const SizedBox(height: 10),
+
+                      // increment or decrement quantity
+                      QuantitySelector(
+                        quantity: cartItem.quantity,
+                        food: cartItem.food,
+                        onDecreament: () {
+                          restaurant.removeFromCart(cartItem);
+                        },
+                        onIncreament: () {
+                          restaurant.addToCart(
+                              cartItem.food, cartItem.selectedAddons);
+                        },
+                      ),
                     ],
-                  ),
-
-                  const Spacer(),
-
-                  // increment or decrement quantity
-                  QuantitySelector(
-                    quantity: cartItem.quantity,
-                    food: cartItem.food,
-                    onDecreament: () {
-                      restaurant.removeFromCart(cartItem);
-                    },
-                    onIncreament: () {
-                      restaurant.addToCart(
-                          cartItem.food, cartItem.selectedAddons);
-                    },
                   ),
                 ],
               ),
