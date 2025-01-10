@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/main.dart';
-import 'package:flutter_application_3/models/restaurant.dart';
-import 'package:flutter_application_3/services/database/firestore.dart';
+import '../models/restaurant.dart';
+import '../services/database/firestore.dart';
 import 'package:provider/provider.dart';
 import '../components/my_receipt.dart';
 

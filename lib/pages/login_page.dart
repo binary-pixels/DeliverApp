@@ -1,7 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/services/auth/auth_service.dart';
+import '../services/auth/auth_service.dart';
 import '../components/my_button.dart';
 import '../components/my_textfield.dart';
 import 'package:lottie/lottie.dart';

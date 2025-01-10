@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/services/auth/auth_service.dart';
+import '../services/auth/auth_service.dart';
 import '../components/my_drawer_tile.dart';
 import '../pages/settings_page.dart';
 

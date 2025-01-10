@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/components/my_button.dart';
+import '../components/my_button.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'delivery_progress.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';

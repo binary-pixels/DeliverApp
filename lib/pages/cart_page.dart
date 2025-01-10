@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/components/my_button.dart';
-import 'package:flutter_application_3/pages/payment_page.dart';
+import '../components/my_button.dart';
+import 'payment_page.dart';
 import '../components/my_cart_tile.dart';
 import '../models/restaurant.dart';
 import 'package:provider/provider.dart';
